@@ -75,16 +75,18 @@ class Request extends BaseRequest
     protected function buildBody()
     {
         $message = [
-            'to' => $this->getTo(),
-            'registration_ids' => $this->getRegistrationIds(),
+            'token' => $this->getTo(),
             'notification' => $this->getNotification(),
             'data' => $this->getData(),
+            'registration_ids' => $this->getRegistrationIds(),
         ];
 
         $message = array_merge($message, $this->getOptions());
 
-        // remove null entries
-        return array_filter($message);
+        return [
+            // remove null entries
+            'message' => array_filter($message),
+        ];
     }
 
     /**

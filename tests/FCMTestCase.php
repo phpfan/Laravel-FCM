@@ -14,7 +14,7 @@ abstract class FCMTestCase extends TestCase
         $app['config']['fcm.driver'] = 'http';
         $app['config']['fcm.http.timeout'] = 20;
         $app['config']['fcm.http.server_send_url'] = 'http://test.test';
-        $app['config']['fcm.http.server_key'] = 'key=myKey';
+        $app['config']['fcm.http.server_key'] = 'myKey';
         $app['config']['fcm.http.sender_id'] = 'SENDER_ID';
 
         return $app;
